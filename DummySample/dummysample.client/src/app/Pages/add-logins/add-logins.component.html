@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form [formGroup]="form" >
+              <div class="border border-primary text-center mt-5">
+                <div class="h1">User</div>
+                <hr>
+                <div class="content">
+                    <div class="name mb-3">
+                    
+                      <input type="text" name="name" formControlName="name" [(ngModel)]="name">
+
+                    </div>
+                    <div class="description mb-3">
+                     
+                      <input type="text" name="name" formControlName="description"  [(ngModel)]="description">
+                        
+                    </div>
+                    <div class="type mb-3">
+                    
+                        <input type="text" name="name" formControlName="type"  [(ngModel)]="type">
+                      
+                        
+                    </div>
+                </div>
+                <hr>
+                <button class="btn btn-primary mb-2"(click)="UpdateForm(alldata)" >Update</button>
+                <button class="btn btn-danger mb-2" style="margin-left: 10px;" (click)="deleteitem(alldata.demoID)" >Delete</button>
+
+            </div>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

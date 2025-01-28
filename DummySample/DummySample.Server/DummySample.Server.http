@@ -1,0 +1,6 @@
+@DummySample.Server_HostAddress = http://localhost:5038
+
+GET {{DummySample.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

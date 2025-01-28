@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "R80gKy2vmmkTpSTlNrPH3tRz+X0AtHT84seJGWY04qM=",
+  "Source": "DummySample.Server",
+  "BasePath": "_content/DummySample.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\Management Project\\DummySample\\dummysample.client\\dummysample.client.esproj",
+      "Version": 2,
+      "Source": "dummysample.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

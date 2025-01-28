@@ -1,0 +1,60 @@
+<div class="body-container">
+  <div class="login-container">
+    <div class="loginBx loginBx1">
+      <img src="image.png" alt="" height="100%" width="100%" />
+    </div>
+    <div class="loginBx loginBx2">
+      <h3
+        class="text-center text-danger  mb-4 fw-bold"
+        style="text-transform: uppercase; font-weight: 600 ;"
+      >
+        Login
+      </h3>
+      <form [formGroup]="loginform" >
+        <div class="mb-3 ">
+          <label for="username" class="form-label text-primary" class="name">Name:</label>
+          <input
+            formControlName="name"
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Ex.War"
+          />
+        
+        </div>
+        <div class="mb-3 ">
+          <label for="password" class="form-label text-primary" class="name">Description:</label>
+          <input
+            type="text" 
+            class="form-control"
+            formControlName="description"
+            id="password"
+            placeholder="Ex.Developer"
+          />
+        
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label text-primary" class="name">Type:</label>
+          <input
+            type="text" 
+            class="form-control"
+            formControlName="type"
+            id="password"
+            placeholder="Ex.7"
+          />
+        
+        </div>
+        <div class="d-grid">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            (click)="onSubmit()"
+            
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
