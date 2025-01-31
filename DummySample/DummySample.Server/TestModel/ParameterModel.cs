@@ -4,7 +4,7 @@
     {
         public class GetBYIDModel
         {
-            public int ID { get; set; }
+            public string? id { get; set; }
         }
 
         public class DeleteModel

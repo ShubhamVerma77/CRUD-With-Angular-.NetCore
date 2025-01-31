@@ -1,8 +1,10 @@
-﻿using DummySample.Server.Common;
+﻿using System.Collections.Generic;
+using DummySample.Server.Common;
 using DummySample.Server.Data;
 using DummySample.Server.Interface;
 using DummySample.Server.Model;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static DummySample.Server.TestModel.ParameterModel;
 
 namespace DummySample.Server.Service
@@ -51,7 +53,10 @@ namespace DummySample.Server.Service
             try
             {
                 List<Demo> list = await _context.DummyTable.ToListAsync();
-
+           foreach (var item in list)
+                {
+                    item.EID = EncryptDecrypt.EncryptStringAES(item.DemoID.ToString());
+                }
                 if (list.Count > 0)
                 {
                     model.IsComplete = true;
@@ -81,9 +86,15 @@ namespace DummySample.Server.Service
             StatusModel<Demo> models = new StatusModel<Demo>();
             try
             {
-                var Data = await _context.DummyTable.SingleOrDefaultAsync(m => m.DemoID == model.ID);
+                var idemoID = Convert.ToInt32(EncryptDecrypt.DecryptStringAES(model.id));
+                var Data = await _context.DummyTable.FirstOrDefaultAsync(m => m.DemoID == idemoID);
+
+
                 if (Data != null)
                 {
+                  
+                 Data.EID = EncryptDecrypt.EncryptStringAES(Data.DemoID.ToString());
+
                     models.IsComplete = true;
                     models.Data = Data;
                     models.Status = 200;
@@ -110,12 +121,13 @@ namespace DummySample.Server.Service
             StatusModel<Demo> model = new StatusModel<Demo>();
             try
             {
-             
+
                 var data = new Demo
                 {
-                   
+
                     Name = demo.Name,
                     Description = demo.Description,
+                    EID = EncryptDecrypt.EncryptStringAES(demo.DemoID.ToString()),
                     Type = demo.Type,
                     CreatedBy = 7,
                 };

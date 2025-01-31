@@ -21,17 +21,17 @@
     display: flex;
     width: 100%;
     max-width: 800px;
-    border-radius: 10px;
-    height: fit-content;
-    overflow: hidden;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px !important;
+    height: fit-content !important;
+    overflow: hidden !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
   }
   .body-container {
-    display: flex;
-    justify-content: center;
+    display: flex !important;
+    justify-content: center !important;
 
-    height: 100vh;
-    align-items: center;
+    height: 100vh !important;
+    align-items: center !important;
   }
   .name{
     float: left;
@@ -41,14 +41,39 @@
   .loginBx {
     padding: 35px 30px;
     width: 100%;
-    background: #ffffff;
+    background: #ffffff !important;
   }
   .text-primary {
     color: rgb(6, 6, 6) !important;
   }
   .loginBx.loginBx1 img {
-    width: 100%;
+    width: 100% !important;
   }
   .loginBx.loginBx2 {
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #ddd !important;
   }
+
+
+
+  .spinner {
+    width: 3rem !important;
+    height: 3rem !important;
+
+  }
+  
+  @media (min-width: 768px) {
+    .spinner {
+      width: 5rem !important; 
+      height: 5rem !important;
+   
+    }
+  }
+  
+  @media (min-width: 1200px) { 
+    .spinner {
+      width: 5rem !important;
+      height: 5rem !important;
+     
+    }
+  }
+  

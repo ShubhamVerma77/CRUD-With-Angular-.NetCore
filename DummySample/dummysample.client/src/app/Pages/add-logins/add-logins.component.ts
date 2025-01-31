@@ -18,11 +18,14 @@ export class AddLoginsComponent implements OnInit {
   name: any;
   description: any;
   type: any;
+    Eid: any;
   constructor(private parms:ActivatedRoute,
     private fb:FormBuilder
   ){
     this.parms.queryParams.subscribe((parms:any)=>{
-      this.id= parms.demoID
+      this.id = parms.demoID
+ 
+     
     })
 
     this.form = this.fb.group({
@@ -43,18 +46,16 @@ export class AddLoginsComponent implements OnInit {
 
     alldata:any;
 
-    getData(demoID:any){
- let api = 'Demo/GetDataById'
+getData(demoID:any){
+ let api = `Demo/GetDataById`
  const model = new getbyidModel()
- model.id = demoID
- console.log(model,"ss")
+ model.id = demoID;
  this.service.postData(api, model).subscribe((res:any)=>{
+
 this.alldata = res.data;
 this.name = this.alldata.name;
 this.description = this.alldata.description;
 this.type = this.alldata.type;
-console.log(this.name,"ss")
-console.log(this.alldata,"DAta aa Gya Gya Gya Gya Gya Gya Gya Gya bawa")
  })
     }
 

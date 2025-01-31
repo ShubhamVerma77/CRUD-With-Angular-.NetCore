@@ -2,7 +2,7 @@ export class Demo {
 }
 
 export class getbyidModel{
-    id: number=0;
+    id: string ='';
 }
 
 

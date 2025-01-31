@@ -10,6 +10,7 @@ namespace DummySample.Server.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int DemoID { get; set; }
         public string Name { get; set; }
+        public string? EID { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
         public int? CreatedBy { get; set; }

@@ -28,7 +28,7 @@
             type="text" 
             class="form-control"
             formControlName="description"
-            id="password"
+            
             placeholder="Ex.Developer"
           />
         
@@ -39,7 +39,7 @@
             type="text" 
             class="form-control"
             formControlName="type"
-            id="password"
+           
             placeholder="Ex.7"
           />
         
@@ -58,3 +58,21 @@
     </div>
   </div>
 </div>
+
+
+<div class="spinner spinner-border text-danger position-absolute top-50 start-50 " role="status" *ngIf="spinnershow" >
+  </div>
+  
+ 
+  
+ <div class="alert alert-danger alert-dismissible fade show position-absolute top-0 end-0 me-3 mt-3" role="alert" *ngIf="ErrorShow" >
+  <strong>Error Occured!</strong> 
+</div>
+
+<div class="alert alert-warning alert-dismissible fade show position-absolute top-0 end-0 me-3 mt-3" role="alert" *ngIf="warnshow" >
+  <strong>Please Fill All The Fields!</strong> 
+</div> 
+
+
+
+

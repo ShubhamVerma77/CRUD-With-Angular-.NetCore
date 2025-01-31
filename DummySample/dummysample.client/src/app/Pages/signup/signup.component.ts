@@ -27,12 +27,19 @@ this.loginform = formBuilder.group({
 })
 
 }
+spinnershow:boolean = false;
+successShow = false;
+
+ErrorShow:boolean = false;
+warnshow:boolean = false;
+
 
 get Controls(){
   return this.loginform.controls;
 }
 onSubmit() {
-
+ 
+this.spinnershow = true;
 let api = 'Demo/SaveData'
 const model = new InsertDataParamsmodel()
 model.Name = this.Controls['name'].value;
@@ -41,17 +48,23 @@ model.Type = this.Controls['type'].value;
 if(this.loginform.valid){
   this.services.postData(api,model).subscribe((res:any) =>{
     if(res.isComplete){
-alert("Data Saved Successfully");
-console.log(res);
+this.successShow= true;
+alert("Added Successfully")
+this.spinnershow=false;
 this.router.navigate(['/list']);
+
     }
     else{
-      alert("Error Occured")
+
+      this.spinnershow =false;
+      this.ErrorShow = true;
     }
   })
 }
 else{
-  alert("Please fill all the fields");
+
+  this.spinnershow = false;
+  this.warnshow = true;
 }
 
   }
