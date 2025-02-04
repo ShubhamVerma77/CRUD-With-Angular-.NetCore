@@ -181,6 +181,35 @@ namespace DummySample.Server.Service
             }
             return statusModel;
         }
-    }
+
+        public async Task<StatusModel<bool>> DeleteAllData()
+        {
+            StatusModel<bool> statusModel = new StatusModel<bool>();
+            try
+            {
+                var allData = await _context.DummyTable.ToListAsync(); 
+                if (allData.Any())
+                {
+                    _context.DummyTable.RemoveRange(allData); 
+                    await _context.SaveChangesAsync(); 
+                    statusModel.IsComplete = true;
+                    statusModel.Status = 200;
+                    statusModel.Message = "All records deleted successfully.";
+                }
+                else
+                {
+                    statusModel.IsComplete = false;
+                    statusModel.Message = "No records found.";
+                }
+            }
+            catch (Exception ex)
+            {
+                statusModel.IsComplete = false;
+                statusModel.Message = ex.Message;
+            }
+            return statusModel;
+        }
 
     }
+
+}

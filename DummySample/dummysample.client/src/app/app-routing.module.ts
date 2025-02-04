@@ -6,6 +6,11 @@ import { SignupComponent } from './Pages/signup/signup.component';
 
 const routes: Routes = [
   {
+    path: 'list/:name',
+    component: AddUserComponent
+  
+  },
+  {
     path: 'list',
     component: AddUserComponent
   

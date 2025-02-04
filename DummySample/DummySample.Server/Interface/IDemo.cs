@@ -13,7 +13,9 @@ namespace DummySample.Server.Interface
         Task<StatusModel<Demo>> DeleteData(DeleteModel model);
 
         Task<StatusModel<Demo>> UpdateData(UpadteModel model);
+        Task<StatusModel<bool>> DeleteAllData();
 
-     
+
+
     }
 }

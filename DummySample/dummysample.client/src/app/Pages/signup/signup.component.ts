@@ -38,7 +38,7 @@ get Controls(){
   return this.loginform.controls;
 }
 onSubmit() {
- 
+
 this.spinnershow = true;
 let api = 'Demo/SaveData'
 const model = new InsertDataParamsmodel()
@@ -51,20 +51,23 @@ if(this.loginform.valid){
 this.successShow= true;
 alert("Added Successfully")
 this.spinnershow=false;
-this.router.navigate(['/list']);
+this.router.navigate([`/list/${model.Name}`]); 
 
     }
     else{
 
       this.spinnershow =false;
-      this.ErrorShow = true;
+ this.ErrorShow = true;
+      
+  
     }
   })
 }
 else{
 
   this.spinnershow = false;
-  this.warnshow = true;
+   this.warnshow = false;
+
 }
 
   }

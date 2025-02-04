@@ -14,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AddUserComponent implements OnInit {
 data: any;
 id:any
-    Eid: any;
+Eid: any;
 successShow : boolean = false;
 ngOnInit(): void {
 

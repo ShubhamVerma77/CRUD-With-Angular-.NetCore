@@ -10,17 +10,17 @@
   }
   
   .btn-primary:hover {
-    background-color: #0b5ed7;
+    background-color: #0b5ed7  !important;
   }
   
   .form-label {
-    font-weight: 500;
+    font-weight: 500  !important;
   }
   .login-container{
-    border: 1px solid #1d447e;
-    display: flex;
-    width: 100%;
-    max-width: 800px;
+    border: 1px solid #1d447e !important;
+    display: flex !important;
+    width: 100% !important;
+    max-width: 800px !important;
     border-radius: 10px !important;
     height: fit-content !important;
     overflow: hidden !important;

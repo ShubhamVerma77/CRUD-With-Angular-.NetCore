@@ -87,5 +87,19 @@ namespace DummySample.Server.Controllers
                 return Ok(Result);
             }
         }
+
+        [HttpPost("DeleteAllData")]
+        public async Task<IActionResult> DeleteAllData()
+        {
+            var Result = await _demoservice.DeleteAllData();
+            if (Result == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(Result);
+            }
+        }
     }
 }
